@@ -11,7 +11,7 @@
     <!--網站描述-->
     <meta name="author" content="Patrick">
     <!--作者-->
-    <title>Document</title>
+    <title>讓轉盤決定要吃什麼！</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
@@ -147,7 +147,7 @@
             <font size="3">第3間餐廳 </font><input type="text" class="form-control" id="index3" size=30 value="麥當勞"><br>
             <font size="3">第4間餐廳 </font><input type="text" class="form-control" id="index4" size=30 value="和園"><br>
             <font size="3">第5間餐廳 </font><input type="text" class="form-control" id="index5" size=30 value="叉燒麵"><br>
-            <font size="3">第6間餐廳 </font><input type="text" class="form-control" id="index6" size=30><br>
+            <font size="3">第6間餐廳 </font><input type="text" class="form-control" id="index6" size=30 value="7-11"><br>
             <font size="3">第7間餐廳 </font><input type="text" class="form-control" id="index7" size=30><br>
             <font size="3">第8間餐廳 </font><input type="text" class="form-control" id="index8" size=30><br>
             <font size="3">第9間餐廳 </font><input type="text" class="form-control" id="index9" size=30><br>
@@ -462,18 +462,18 @@
                 }
             })();
         }
-    })(jQuery); console.log("\u002f\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u000d\u000a\u0020\u002a\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u002a\u0009\u0009\u000d\u000a\u0020\u002a\u0020\u0009\u0009\u0009\u0009\u0009\u0009\u0020\u0020\u0020\u0020\u0020\u0020\u4ee3\u7801\u5e93\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u002a\u000d\u000a\u0020\u002a\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0077\u0077\u0077\u002e\u0064\u006d\u0061\u006b\u0075\u002e\u0063\u006f\u006d\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u002a\u000d\u000a\u0020\u002a\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0009\u0009\u0020\u0020\u52aa\u529b\u521b\u5efa\u5b8c\u5584\u3001\u6301\u7eed\u66f4\u65b0\u63d2\u4ef6\u4ee5\u53ca\u6a21\u677f\u0009\u0009\u0009\u002a\u000d\u000a\u0020\u002a\u0020\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u002a\u000d\u000a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002f");
+    })(jQuery);
 
 
     // 從這裡開始
     var turnplate = {
-        restaraunts: [],				//大转盘奖品名称
-        colors: [],					//大转盘奖品区块对应背景颜色
-        outsideRadius: 192,			//大转盘外圆的半径
-        textRadius: 155,				//大转盘奖品位置距离圆心的距离
-        insideRadius: 68,			//大转盘内圆的半径
-        startAngle: 0,				//开始角度
-        bRotate: false				//false:停止;ture:旋转
+        restaraunts: [],			//轉盤獎品名稱
+        colors: [],					//大轉盤獎品區塊對應顏色
+        outsideRadius: 192,			//大轉盤外圈半徑
+        textRadius: 155,			//大轉盤獎品位置距離圓心的距離
+        insideRadius: 68,			//大轉盤內圓半徑
+        startAngle: 0,				//開始角度
+        bRotate: false				//false:停止;ture:旋轉
     };
 
     function render() {
@@ -498,36 +498,7 @@
 
     $(document).ready(function () {
 
-
-        //动态添加大转盘的奖品与奖品区域背景颜色
-
-        // function click() {
-        //     // var array = new Array();
-        //     // for (i = 1; i <= 10; i++) {
-        //     //     var value = $(i).val();
-        //     //     if (value != null) {
-        //     //         array.push(value);
-        //     //     }
-        //     // }
-        //     // turnplate.restaraunts = array;//["測試1", "測試2", "感謝參與", "測試3", "測試4", "測試5", "測試6 ", "測試7", "測試8", "測試9"];
-        //     // turnplate.colors = ["#FFF4D6", "#FFFFFF", "#FFF4D6", "#FFFFFF", "#FFF4D6", "#FFFFFF", "#FFF4D6", "#FFFFFF", "#FFF4D6", "#FFFFFF"];
-        //     alert('test');
-        // }
-
-
-
-        var rotateTimeOut = function () {
-            $('#wheelcanvas').rotate({
-                angle: 0,
-                animateTo: 2160,
-                duration: 8000,
-                callback: function () {
-                    alert('網路超時，請檢查網路是否通順！');
-                }
-            });
-        };
-
-        //旋转转盘 item:奖品位置; txt：提示语;
+        //旋轉轉盤 item:獎品位置; txt：提示语;
         var rotateFn = function (item, txt) {
             var angles = item * (360 / turnplate.restaraunts.length) - (360 / (turnplate.restaraunts.length * 2));
             if (angles < 270) {
@@ -550,9 +521,10 @@
         $('.pointer').click(function () {
             if (turnplate.bRotate) return;
             turnplate.bRotate = !turnplate.bRotate;
-            //获取随机数(奖品个数范围内)
+            //獲取隨機數
             var item = rnd(1, turnplate.restaraunts.length);
-            //奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
+
+            //獎品數量等於10,指針落在對應獎品區域中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
             rotateFn(item, turnplate.restaraunts[item - 1]);
             console.log(item);
         });
@@ -568,8 +540,7 @@
 
     }
 
-
-    //页面所有元素加载完毕后执行drawRouletteWheel()方法对转盘进行渲染
+    //頁面所有元素加載完畢後執行drawRouletteWheel() 方法對轉盤進行渲染
     window.onload = function () {
         drawRouletteWheel();
     };
@@ -647,7 +618,7 @@
                 }
                 //把当前画布返回（调整）到上一个save()状态之前 
                 ctx.restore();
-                //----绘制奖品结束----
+
             }
         }
     }
