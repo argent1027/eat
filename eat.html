@@ -11,7 +11,7 @@
     <!--網站描述-->
     <meta name="author" content="Patrick">
     <!--作者-->
-    <title>讓轉盤決定要吃什麼！</title>
+    <title>讓轉盤決定今天吃什麼！</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
@@ -124,7 +124,7 @@
 
 <body>
     <div align="center" class="top">
-        <font size="60" align="center">今天吃什麼</font>
+        <font size="60" align="center">用轉盤決定今天吃什麼</font>
     </div>
     <div class="bigcontean">
 
@@ -142,12 +142,12 @@
 
 
         <div class="text hei">
-            <font size="3">第1間餐廳 </font><input type="text" class="form-control" id="index1" size=30 value="又一村"><br>
-            <font size="3">第2間餐廳 </font><input type="text" class="form-control" id="index2" size=30 value="麵疙瘩"><br>
-            <font size="3">第3間餐廳 </font><input type="text" class="form-control" id="index3" size=30 value="麥當勞"><br>
-            <font size="3">第4間餐廳 </font><input type="text" class="form-control" id="index4" size=30 value="和園"><br>
-            <font size="3">第5間餐廳 </font><input type="text" class="form-control" id="index5" size=30 value="叉燒麵"><br>
-            <font size="3">第6間餐廳 </font><input type="text" class="form-control" id="index6" size=30 value="7-11"><br>
+            <font size="3">第1間餐廳 </font><input type="text" class="form-control" id="index1" size=30><br>
+            <font size="3">第2間餐廳 </font><input type="text" class="form-control" id="index2" size=30><br>
+            <font size="3">第3間餐廳 </font><input type="text" class="form-control" id="index3" size=30><br>
+            <font size="3">第4間餐廳 </font><input type="text" class="form-control" id="index4" size=30><br>
+            <font size="3">第5間餐廳 </font><input type="text" class="form-control" id="index5" size=30><br>
+            <font size="3">第6間餐廳 </font><input type="text" class="form-control" id="index6" size=30><br>
             <font size="3">第7間餐廳 </font><input type="text" class="form-control" id="index7" size=30><br>
             <font size="3">第8間餐廳 </font><input type="text" class="form-control" id="index8" size=30><br>
             <font size="3">第9間餐廳 </font><input type="text" class="form-control" id="index9" size=30><br>
@@ -512,13 +512,29 @@
                 animateTo: angles + 1800,
                 duration: 8000,
                 callback: function () {
-                    alert("今天吃" + txt);
+                    alert("今天吃" + '「' + txt + '」');
                     turnplate.bRotate = !turnplate.bRotate;
                 }
             });
         };
 
         $('.pointer').click(function () {
+
+            var array = new Array;
+            for (i = 1; i <= 10; i++) {
+                var key = "index" + i;
+                var value = document.getElementById(key).value.trim();
+                value = value.toString();
+                if (value != "" || value != "" || value != "") {
+                    array.push(value)
+                }
+            }
+            if (array.length < 2) {
+                alert("請添加兩間以上的餐廳!");
+                return "";
+            }
+
+
             if (turnplate.bRotate) return;
             turnplate.bRotate = !turnplate.bRotate;
             //獲取隨機數
